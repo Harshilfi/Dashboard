@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Header onMenuClick={clickHandler} selectedOption={selectedOption}/>
       {selectedOption === 'Upskill' && <LearningCont />}
-      {selectedOption !== 'Upskill' && <p className='extraCont'>{selectedOption} Content here.</p>}
+      {selectedOption !== 'Upskill' && <main className='extraCont'>{selectedOption} Content here.</main>}
       <div className="extramenu">
         <img src={bell} alt="icon" className="icon" />
         <div className='profile'></div>

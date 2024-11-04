@@ -16,7 +16,7 @@ export default function LearningCont(){
         setisMentorSession(false)
     }
     return(
-        <div className='upskillcont'>
+        <main className='upskillcont'>
             <div className='container'>
                 <div className='submenu'>
                     <div className={`item ${isMentorSession ? 'selected' : ''}`} onClick={setMenu1}>
@@ -40,6 +40,6 @@ export default function LearningCont(){
             {
                 isMentorSession && <p className='mentorsess'>no Mentor sessions available.</p>
             }
-        </div>
+        </main>
     )
 }
