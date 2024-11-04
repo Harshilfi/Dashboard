@@ -38,7 +38,7 @@ export default function LearningCont(){
                 <ChapterCont/></div>
             }
             {
-                isMentorSession && <p className='mentorsess'>Mentor Sessions Here.</p>
+                isMentorSession && <p className='mentorsess'>no Mentor sessions available.</p>
             }
         </div>
     )

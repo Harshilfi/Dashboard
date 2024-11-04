@@ -6,33 +6,23 @@ import pad from '../assets/writingpad.svg';
 import graph from '../assets/graph.svg';
 import star from '../assets/star.svg';
 import { useState } from 'react';
-export default function ExpandedMenu(){
+export default function ExpandedMenu({ onMenuClick, selectedOption }){
+    const menuItems = [
+        { id: 'Dashboard', icon: dshbrd, text: 'Dashboard' },
+        { id: 'Learn', icon: bulb, text: 'Learn' },
+        { id: 'Forums', icon: people, text: 'Forums' },
+        { id: 'Upskill', icon: pad, text: 'Upskill' },
+        { id: 'Contest', icon: graph, text: 'Contest' },
+        { id: 'Leaderboard', icon: star, text: 'Leaderboard' },
+      ];
     return(
-        <div className='expandedmenu'>
-            <div>
-                <img src={dshbrd} alt="icon" className="icon" />
-                <p className="menutext">Dashboard</p>
-            </div>
-            <div>
-                <img src={bulb} alt="icon" className="icon" />
-                <p className="menutext">Learn</p>
-            </div>
-            <div>
-                <img src={people} alt="icon" className="icon" />
-                <p className="menutext">Forums</p>
-            </div>
-            <div>
-                {<img src={pad} alt="icon" className="icon" />}
-                <p className="menutext">Upskill</p>
-            </div>
-            <div>
-                <img src={graph} alt="icon" className="icon" />
-                <p className="menutext">Contest</p>
-            </div>
-            <div>
-                <img src={star} alt="icon" className="icon" />
-                <p className="menutext">Leaderboard</p>
-            </div>
-        </div>
+        <div className="expandedmenu">
+            {menuItems.map((item) => (
+                <div key={item.id} onClick={() => onMenuClick(item.id)} className={selectedOption === item.id ? 'selected' : ''}>
+                    <img src={item.icon} alt="icon" className="icon" />
+                    <p className="menutext">{item.text}</p>
+                </div>
+            ))}
+    </div>
     )
 }

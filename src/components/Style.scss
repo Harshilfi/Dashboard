@@ -33,6 +33,7 @@
     flex-direction: column;
 }
 .App{
+    position: relative;
     padding: var(--outermargin);
     background-color: var(--white);
     display: flex;
@@ -56,6 +57,12 @@
         background-color: gray;
         border-radius: 999px;
     }
+}
+.extraCont{
+    margin: 35vh auto;
+    left: 0;
+    right: 0;
+    font-size: clamp(3rem,6vw,8rem);
 }
 .header{
     background-color: var(--white);
@@ -86,7 +93,7 @@
             cursor: pointer;
             width: 100%;
             padding: 15px 10px;
-            &:active, &:hover{
+            &:active, &:hover, &.selected{
                 background-color: var(--blue2);
                 border-radius: var(--radius);
                 p{
@@ -264,7 +271,7 @@
         flex-direction: column;
     }
     .header{
-        padding:6vw;
+        padding:3vw;
         div{
             gap: 10px;
         }
@@ -293,6 +300,9 @@
                 }
             }
         }
+    }
+    .extramenu{
+        top: 5%;
     }
 
 }
