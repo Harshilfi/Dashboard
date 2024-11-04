@@ -48,7 +48,7 @@ export default function PartItem(props){
             {visible && <div className='resources'>
                 {props.ptcontent.map((source)=>(
                     <div className='item'>
-                        <div>
+                        <div className='conttitle'>
                             {source.ctname.includes('Video')?<img src={video} alt="icon" className="icon"/>:null}
                             {source.ctname.includes('Resource')?<img src={papers} alt="icon" className="icon"/>:null}
                             {source.ctname.includes('Cod')?<img src={code} alt="icon" className="icon"/>:null}

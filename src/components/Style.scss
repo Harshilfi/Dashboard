@@ -50,7 +50,10 @@
     display: flex;
     gap: var(--gap);
     cursor: pointer;
-
+    img{
+        width: 20px;
+        height: auto;
+    }
     .profile{
         width: 45px;
         height: 45px;
@@ -166,7 +169,7 @@
                 display: flex;
                 gap: var(--outermargin);
                 cursor: pointer;
-                width: 250px;
+                width: 240px;
                 .duration{
                     display: none;
                     font-weight: 400;
@@ -216,12 +219,13 @@
             display: flex;
             justify-content: space-between;
             width: 50%;
+            font-size: clamp(0.8rem,1vw,1rem);
             div{
                 display: flex;
                 align-items: center;
-                gap: 6px;
+                gap: 3px;
                 img{
-                    width: 17px;
+                    width: 14px;
                     height: auto;
                 }
             }
@@ -266,12 +270,14 @@
         }
     }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
     .App{
         flex-direction: column;
     }
     .header{
         padding:3vw;
+        position: fixed;
+        z-index: 1;
         div{
             gap: 10px;
         }
@@ -279,30 +285,63 @@
             width: 100px;
             height: auto;
         }
+        .expandedmenu{
+            height: 100vh;
+        }
     }
     .upskillcont{
-        margin-top: -20px;
+        margin-top: 15vh;
         .container{
-            scale: 0.8;
-            justify-content: space-around;
+            scale: 0.9;
+            justify-content: center;
+            gap: 24px;
             .item{
                 flex-direction: column;
+            }
+            .submenu{
+                gap: 24px;
             }
         }
     }
     .chaptercontent{
         flex-direction: column;
         align-items: center;
-        .partcontent{
-            .partitem{
+        .chplist{
+            gap: 24px;
+            .item{
                 div{
-                    scale: 0.7;
-                }
-            }
+                    justify-content: space-between;
+                }}
         }
     }
     .extramenu{
-        top: 5%;
+        position: fixed;
+        top: 7vw;
+    }
+    .mainpartitem{
+        margin-top: 5%;
+        .partitem{
+            @include flexcol();
+            align-items: self-start;
+            gap: 24px;
+            padding-bottom:50px ;
+            .parttitle{
+                width: 100%;
+                p{
+                    font-weight: 700;
+                }
+            }
+            .partdetails{
+                justify-content:flex-start;
+                width: 100%;
+                gap: 15px;
+            }
+        }
+        .resources{
+            .item{
+                gap: 10px;
+            }
+        }
     }
 
 }

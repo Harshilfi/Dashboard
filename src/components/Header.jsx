@@ -6,7 +6,7 @@ export default function Header({ onMenuClick, selectedOption }){
     const [expanded, setexpanded] = useState(true);
     const toggle = () => {setexpanded(!expanded);};
     return(
-        <div>
+        <header>
             <nav className='header'>
                 <div>
                     <div className="menu" onClick={toggle}>
@@ -19,6 +19,6 @@ export default function Header({ onMenuClick, selectedOption }){
                 {expanded && <ExpandedMenu onMenuClick={onMenuClick} selectedOption={selectedOption}/>}
             </nav>
             
-        </div>
+        </header>
     )
 }
